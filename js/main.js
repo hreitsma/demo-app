@@ -24,8 +24,13 @@ var app = {
     initialize: function() {
         var self = this;
 		this.store = new MemoryStore(function() {
-			self.showAlert('Store Initialized on: '+ device.platform, 'Info');
+			self.showAlert('Store Initialized', 'Info');
 		});
+		
+		document.addEventListener("backbutton", function() {
+			self.showAlert('Back button pressed!', 'Info');
+		}, true);
+		
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
 
