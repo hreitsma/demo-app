@@ -12,8 +12,10 @@
     </description>
  
     <author href="https://custompixels.nl" email="henk@custompixels.nl">
-        Henk Reitsma
+        CustomPixels
     </author>
+	
+	<preference name="windows-identity-name" value="CustomPixels" />
  
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
