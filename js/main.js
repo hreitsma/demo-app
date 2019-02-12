@@ -28,8 +28,12 @@ var app = {
 		});
 		
 		document.addEventListener("backbutton", function() {
-			self.showAlert('Back button pressed!', 'Info');
+			self.showAlert('Back button pressed!', 'Action');
 		}, true);
+		
+		$('.back-button').on('click',function(){
+			self.showAlert('Back button pressed!', 'Action');
+		});
 		
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }

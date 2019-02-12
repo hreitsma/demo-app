@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    background: #666;
+    background: #eee;
     -webkit-background-size: 1px 44px;
     -moz-background-size: 1px 44px;
     -ms-background-size: 1px 44px;
@@ -42,16 +42,14 @@ body {
     box-flex: 1;
 }
 
-.header-button {
-    position: absolute;
-    top: 6;
-    padding: 7px 5px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    line-height: 1em;
-}
-
-.header-button-left {
-    left: 4;
+.header .back-button {
+	display: inline-block;
+	height: 35px;
+	width: 35px;
+	background-image: url('../img/angle-left.svg');
+	background-repeat: no-repeat;
+	background-size: 35px;
+	margin: 5px 0;
 }
 
 .search-bar {
