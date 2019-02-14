@@ -47,6 +47,12 @@ body {
 	margin: 5px 0;
 }
 
+#map {
+	background-color: #ddd;
+	width: 100%;
+	min-height: 200px;
+}
+
 .search-bar {
     background: #ccc;
     height: 32px;
