@@ -42,7 +42,7 @@ var app = {
 
 		// Create a Google Maps native view under the map_canvas div.
 		var div = document.getElementById("map");
-		var map = plugin.google.maps.Map.getMap($('#map'));
+		var map = plugin.google.maps.Map.getMap(div);
 
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
