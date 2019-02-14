@@ -35,14 +35,14 @@ var app = {
 			self.showAlert('Back button pressed!', 'Action');
 		});
 		
-		window.plugins.google.maps.environment.setEnv({
+		self.plugin.google.maps.environment.setEnv({
 		  'API_KEY_FOR_BROWSER_RELEASE': '(YOUR_API_KEY_IS_HERE)',
 		  'API_KEY_FOR_BROWSER_DEBUG': ''
 		});
 
 		// Create a Google Maps native view under the map_canvas div.
 		var div = document.getElementById("map");
-		var map = window.plugins.google.maps.Map.getMap(div);
+		var map = self.plugin.google.maps.Map.getMap(div);
 
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
