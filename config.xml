@@ -15,17 +15,9 @@
         CustomPixels
     </author>
 	
-	<plugin name="cordova-plugin-googlemaps" spec="^2.2.3">
-		<variable name="API_KEY_FOR_ANDROID" value="(api key)" />
-		<variable name="API_KEY_FOR_IOS" value="(api key)" />
-		<variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
-		<variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
-		<variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
-	</plugin>
-	
 	<preference name="windows-identity-name" value="CustomPixels" />
-	<preference name="android-minSdkVersion" value="^23" />
 	<preference name="phonegap-version" value="cli-8.0.0" />
+	<preference name="android-minSdkVersion" value="19" />
 	
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
@@ -35,6 +27,16 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 	
+	<plugin name="cordova-plugin-googlemaps" spec="^2.2.3">
+		<variable name="API_KEY_FOR_ANDROID" value="(api key)" />
+		<variable name="API_KEY_FOR_IOS" value="(api key)" />
+		<variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
+		<variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
+		<variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
+	</plugin>
 	
+	<engine name="ios" spec="^4.5.5" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="browser" spec="~5.0.4" />
   
 </widget>
