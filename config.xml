@@ -16,9 +16,7 @@
     </author>
 	
 	<preference name="windows-identity-name" value="CustomPixels" />
-	<preference name="android-minSdkVersion" value="23" />
-	<preference name="buildToolsVersion" value="23.0.1" />
-	<preference name="phonegap-version" value="cli-8.0.0" />
+	<preference name="phonegap-version" value="cli-7.1.0" />
 	
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
