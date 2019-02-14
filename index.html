@@ -36,11 +36,20 @@
 		<script src="lib/jquery-1.8.2.min.js"></script>
 		<script src="js/storage/memory-store.js"></script>
 		
-		<platform name="browser">
+		<!--<script src="js/main.js"></script>-->
 		
-		</platform>
-		
-		<script src="js/main.js"></script>
+		<script type="text/javascript">
+		document.addEventListener("deviceready", function() {
+			self.plugin.google.maps.environment.setEnv({
+			  'API_KEY_FOR_BROWSER_RELEASE': '(YOUR_API_KEY_IS_HERE)',
+			  'API_KEY_FOR_BROWSER_DEBUG': ''
+			});
+
+			// Create a Google Maps native view under the map_canvas div.
+			var div = document.getElementById("map");
+			var map = self.plugin.google.maps.Map.getMap(div);
+		}
+		</script>
 
 	</body>
 </html>

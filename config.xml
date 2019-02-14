@@ -27,12 +27,14 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 	
-	<gap:plugin name="plugin.google.maps" source="plugins.cordova.io">
-		<param name="API_KEY_FOR_ANDROID" value="xyz" />
-		<param name="API_KEY_FOR_IOS" value="123" />
-	</gap:plugin>
-  
-	
+	<plugin name="cordova-plugin-googlemaps" spec="2.3.6">
+		<variable name="API_KEY_FOR_ANDROID" value="(api key)" />
+		<variable name="API_KEY_FOR_IOS" value="(api key)" />
+		<variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
+		<variable name="ANDROID_SUPPORT_V4_VERSION" value="27.1.1" />
+		<variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
+		<variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
+	</plugin>
 	
 	<engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.0.0" />
