@@ -40,10 +40,13 @@
 		
 		<script type="text/javascript">
 		document.addEventListener("deviceready", function() {
-			plugin.google.maps.environment.setEnv({
-			  'API_KEY_FOR_BROWSER_RELEASE': '(YOUR_API_KEY_IS_HERE)',
-			  'API_KEY_FOR_BROWSER_DEBUG': ''
-			});
+			console.log(device.platform);
+			if(device.platform == 'browser') {
+				plugin.google.maps.environment.setEnv({
+				  'API_KEY_FOR_BROWSER_RELEASE': '(YOUR_API_KEY_IS_HERE)',
+				  'API_KEY_FOR_BROWSER_DEBUG': ''
+				});
+			}
 
 			// Create a Google Maps native view under the map_canvas div.
 			var div = document.getElementById("map");
