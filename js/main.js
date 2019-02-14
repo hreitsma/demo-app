@@ -24,7 +24,7 @@ var app = {
     initialize: function() {
         var self = this;
 		this.store = new MemoryStore(function() {
-			self.showAlert('Store Initialized on: '+ this.device.platform, 'Info');
+			self.showAlert('Store Initialized', 'Info');
 		});
 		
 		document.addEventListener("backbutton", function() {
@@ -35,6 +35,14 @@ var app = {
 			self.showAlert('Back button pressed!', 'Action');
 		});
 		
+		plugin.google.maps.environment.setEnv({
+		  'API_KEY_FOR_BROWSER_RELEASE': '(YOUR_API_KEY_IS_HERE)',
+		  'API_KEY_FOR_BROWSER_DEBUG': ''
+		});
+
+		// Create a Google Maps native view under the map_canvas div.
+		var map = plugin.google.maps.Map.getMap($('#map'));
+
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
 
