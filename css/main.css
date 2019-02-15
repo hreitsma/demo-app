@@ -35,8 +35,8 @@ body {
 	width: 33%;
 	height: 50px;
 	background-repeat: no-repeat;
-	background-size: 40px;
-	background-position: center 8px;
+	background-size: 30px;
+	background-position: center;
 }
 
 .navigation .nav-item.search { background-image: url('../img/search.png'); }
@@ -44,14 +44,14 @@ body {
 .navigation .nav-item.account { background-image: url('../img/user.png'); }
 
 .header {
-    background: #eee;
+    background: #efefef;
     height: 50px;
     line-height: 50px;
     width: 100%;
     color: #fff;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
-    border-bottom: solid 1px #eee;
+    border-bottom: solid 1px #efefef;
 }
 
 .header h1 {
