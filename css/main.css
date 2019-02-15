@@ -26,14 +26,14 @@ body {
 .navigation {
 	position: fixed;
 	width: 100%;
-	padding: 0 5%;
+	padding: 0 8%;
 	bottom: 0;
 }
 
 .navigation .nav-item {
 	float: left;
 	text-align: center;
-	width: 30%;
+	width: 28%;
 	height: 50px;
 	background-repeat: no-repeat;
 	background-size: 30px;
