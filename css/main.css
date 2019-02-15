@@ -30,7 +30,7 @@ body {
 }
 
 .navigation .nav-item {
-	display: inline-block;
+	float: left;
 	text-align: center;
 	width: 33%;
 	height: 50px;
