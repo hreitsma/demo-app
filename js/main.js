@@ -4,6 +4,8 @@ function init() {
 
 	if(window.sessionStorage.fbAccessToken) {
 		openFB.getLoginStatus(facebookData);
+	} else {
+		showPanel('.authenticate-panel',false);
 	}
 }
 
