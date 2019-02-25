@@ -46,7 +46,7 @@ function showPanel(panel,footer) {
 	
 	console.log('show panel: '+ panel +', and footer: '+ footer);
 	
-	$('.panel').hide();
+	//$('.panel').hide();
 	$(panel).show();
 	
 	$('.footer').hide();
