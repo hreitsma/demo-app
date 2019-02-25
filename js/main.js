@@ -1,43 +1,57 @@
-var app = {
+var facebookAuthenticated = 'checking';
+var googleAuthenticated = false; // change to 'checking' when google auth is implemented
 
-    findByName: function() {
-        console.log('findByName');
-        this.store.findByName($('.search-key').val(), function(employees) {
-            var l = employees.length;
-            var e;
-            $('.employee-list').empty();
-            for (var i=0; i<l; i++) {
-                e = employees[i];
-                $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
-            }
-        });
-    },
+function init() {
+	openFB.init({appId: '466211257250990'}); //localstorage instead of sessionstore: // tokenStore: window.localStorage
 
-	showAlert: function (message, title) {
-		if (navigator.notification) {
-			navigator.notification.alert(message, null, title, 'OK');
-		} else {
-			alert(title ? (title + ": " + message) : message);
-		}
-	},
+	openFB.getLoginStatus(facebookData);
+}
+
+function facebookData(response) {
+	console.log('facebook auth check: '+ response.status);
 	
-    initialize: function() {
-        var self = this;
-		this.store = new MemoryStore(function() {
-			self.showAlert('Store Initialized', 'Info');
+	if(response.status === 'connected') {
+		openFB.api({path: '/me', 
+			success: function(response){
+				facebookAuthenticated = true;
+				$('.username').text(response.name);
+				$('.profile-picture').attr("src", "https://graph.facebook.com/" + response.id + "/picture?type=normal")
+				console.log(response);
+			}, 
+			error: function(err){
+				facebookAuthenticated = false;
+				openFB.logout();
+			}
 		});
-		
-		document.addEventListener("backbutton", function() {
-			self.showAlert('Back button pressed!', 'Action');
-		}, true);
-		
-		$('.back-button').on('click',function(){
-			self.showAlert('Back button pressed!', 'Action');
-		});
+	} else {
+		facebookAuthenticated = false;
+	}
+	
+	if(!facebookAuthenticated && !googleAuthenticated) {
+		showPanel('.authenticate-panel',false);
+	} else {
+		showPanel('.maps-panel','.footer-navigation');
+	}
+}
 
-        $('.search-key').on('keyup', $.proxy(this.findByName, this));
-    }
+function facebookLogin() {
+	openFB.login( function(response) {
+			if(response.status === 'connected') {
+				openFB.getLoginStatus(facebookData);
+				
+				console.log('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+			} else {
+				alert('Facebook login failed: ' + response.error);
+			}
+		}, {scope: 'public_profile,email'});
+}
 
-};
-
-app.initialize();
+function showPanel(panel,footer) {
+	$('.panel').hide();
+	$(panel).show();
+	
+	$('.footer').hide();
+	if(footer) {
+		$(footer).show();
+	}
+}

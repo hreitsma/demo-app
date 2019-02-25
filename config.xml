@@ -30,6 +30,7 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 	
 	<plugin name="cordova-plugin-device"></plugin>
+	<plugin name="cordova-plugin-googleplus"></plugin>
 	<plugin name="cordova-plugin-inappbrowser"></plugin>
 	
 	<plugin name="cordova-plugin-googlemaps" spec="2.3.6">

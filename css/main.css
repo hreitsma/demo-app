@@ -23,26 +23,65 @@ body {
 	max-width: 1366px;
 }
 
-.facebook-btn {
+.panel {
 	position: absolute;
-	background-color: #4267b2;
+	top: 0;	right: 0; bottom: 0; left: 0;
+	background-color: #eee;
+	background-image: url('../img/splash-image.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	height: 100vh;
+	animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.auth-btn {
+	position: absolute;
 	cursor: pointer;
 	height: 40px;
 	line-height: 40px;
 	padding: 0 24px;
 	color: #fff;
-	top: 0;
+	margin: 0 16px;
+	text-align: center;
+	width: calc(100% - 80px);
 	left: 0;
+	right: 0;
 }
 
-.navigation {
+.facebook-btn {
+	background-color: #4267b2;
+	bottom: 72px;
+}
+
+.google-btn {
+	background-color: #db4437;
+	bottom: 16px;
+}
+
+.footer {
 	position: fixed;
+	background-color: #fff;
 	width: 100%;
+	max-width: 1366px;
 	padding: 0 8%;
 	bottom: 0;
 }
 
-.navigation .nav-item {
+.footer .nav-item {
 	float: left;
 	text-align: center;
 	width: 28%;
@@ -52,11 +91,12 @@ body {
 	background-position: center;
 }
 
-.navigation .nav-item.search { background-image: url('../img/search.png'); }
-.navigation .nav-item.upload { background-image: url('../img/upload.png'); }
-.navigation .nav-item.account { background-image: url('../img/user.png'); }
+.footer .nav-item.search { background-image: url('../img/search.png'); }
+.footer .nav-item.upload { background-image: url('../img/upload.png'); }
+.footer .nav-item.account { background-image: url('../img/user.png'); }
 
 .header {
+	position: relative;
     background: #efefef;
     height: 50px;
     line-height: 50px;
@@ -67,17 +107,18 @@ body {
     border-bottom: solid 1px #efefef;
 }
 
-.header h1 {
-    padding: 0;
-    text-align: center;
-    font-size: 20px;
-    margin: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
+.header .user-details {
+	float: right;
+	color: #000;
+	padding-right: 60px;
+}
+
+.header .user-details .profile-picture {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	height: 40px;
+	border-radius: 50%;
 }
 
 .header .back-button {
