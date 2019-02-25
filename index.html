@@ -63,17 +63,17 @@
 			
 		});
 		
-		function facebookAuth(status) {
-			console.log(status);
-			
-			openFB.api({path: '/me', 
-				success: function(response){
-					console.log(response);
-				}, 
-				error: function(err){
-					console.log(err);
-				}
-			});
+		function facebookAuth(response) {
+			if(response.status == 'connected') {
+				openFB.api({path: '/me', 
+					success: function(response){
+						console.log(response);
+					}, 
+					error: function(err){
+						console.log(err);
+					}
+				});
+			}
 		}
 		
 		function login() {
