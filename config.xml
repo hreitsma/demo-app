@@ -28,6 +28,7 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 	
 	<plugin name="cordova-plugin-device"></plugin>
+	<plugin name="cordova-plugin-facebook4"></plugin>
 	<plugin name="cordova-plugin-googlemaps" spec="2.3.6">
 		<variable name="API_KEY_FOR_ANDROID" value="AIzaSyAPs-qs8Ns1sws7unqO_jvYgaOHqSDQJvs" />
 		<variable name="API_KEY_FOR_IOS" value="AIzaSyAz9H7wtj_FtEVqlol-PPJ-Ap9aiVKgy7U" />
