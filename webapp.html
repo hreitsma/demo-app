@@ -33,10 +33,10 @@
 				<ul class='employee-list'></ul>
 			</div>-->
 			
-			<div class="fb-login-button" data-width="100px" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
 		
+			<div id="status"></div>
 			<div id="map"></div>
 			
 			<div class="navigation">
@@ -45,12 +45,11 @@
 				<div class="nav-item account"></div>
 			</div>
 			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFmWFpko4mhplyc1PPwchmqTqs2IB0gsU&callback=initMap" async defer></script>
+			
 			<script src="lib/jquery-1.8.2.min.js"></script>
 			<script src="js/storage/memory-store.js"></script>
-			
-			
 			<script src="js/facebook.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFmWFpko4mhplyc1PPwchmqTqs2IB0gsU&callback=initMap" async defer></script>
 			
 			<!--<script src="js/main.js"></script>-->
 			
