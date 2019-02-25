@@ -47,6 +47,9 @@ function facebookLogin() {
 }
 
 function showPanel(panel,footer) {
+	
+	console.log('show panel: '+ panel +', and footer: '+ footer);
+	
 	$('.panel').hide();
 	$(panel).show();
 	
