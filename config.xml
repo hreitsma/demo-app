@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "nl.custompixels.test"
+        id          = "com.lovetag42.app"
         versionCode = "10"
         version     = "1.1.0">
  
-    <name>Mijn test applicatie</name>
+    <name>Lovetag42</name>
  
     <description>
-        Een test applicatie
+        Find the best places to meet
     </description>
  
     <author href="https://custompixels.nl" email="henk@custompixels.nl">

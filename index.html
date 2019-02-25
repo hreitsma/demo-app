@@ -48,12 +48,6 @@
 		document.addEventListener("deviceready", function() {
 			
 			console.log(device.platform);
-			if(device.platform == 'browser') {
-				plugin.google.maps.environment.setEnv({
-				  'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyAFmWFpko4mhplyc1PPwchmqTqs2IB0gsU',
-				  'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyAFmWFpko4mhplyc1PPwchmqTqs2IB0gsU'
-				});
-			}
 
 			// Create a Google Maps native view under the map_canvas div.
 			var div = document.getElementById("map");
