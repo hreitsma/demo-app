@@ -38,13 +38,7 @@
 		<variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
 	</plugin>
 	
-	<!-- see: https://www.npmjs.com/package/cordova-plugin-facebook4 ; 
-      using specific git version due to this: http://community.phonegap.com/nitobi/topics/sudden-build-error-android
-      gap:plugin spec="https://github.com/jeduan/cordova-plugin-facebook4#aff9a08a86cc6c6a18019f7adc2896ddf97c11cd" source="git" -->
-    <gap:plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
-        <param name="APP_ID" value="com.lovetag42.app" />
-        <param name="APP_NAME" value="Lovetag42" />
-    </gap:plugin>
+	
 	
 	<engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.0.0" />
