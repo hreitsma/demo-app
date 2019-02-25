@@ -14,6 +14,7 @@
 		-->
 		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<title>Lovetag42</title>
 	</head>
@@ -30,9 +31,8 @@
 				<ul class='employee-list'></ul>
 			</div>-->
 			
-			<button class="btn btn-block" onclick="login()">Login with Facebook</button>
+			<a class="facebook-btn" onclick="login()">Login with Facebook</a>
 		
-			<div id="status"></div>
 			<div id="map"></div>
 			
 			<div class="navigation">
@@ -40,8 +40,6 @@
 				<div class="nav-item upload"></div>
 				<div class="nav-item account"></div>
 			</div>
-			
-			
 			
 			<script src="js/storage/memory-store.js"></script>
 			<script src="lib/jquery-1.8.2.min.js"></script>
@@ -51,30 +49,33 @@
 			<!--<script src="js/main.js"></script>-->
 			
 			<script type="text/javascript">
-			document.addEventListener("deviceready", function() {
-				
-				console.log(device.platform);
-				
-				init();
-
-			});
-			
 			$(document).ready(function() {
-				init();
+				openFB.init({appId: '466211257250990'}); //localstorage instead of sessionstore: // tokenStore: window.localStorage
+				
+				openFB.getLoginStatus(facebookAuth);
 			});
 			
-			function init() {
-				openFB.init({appId: '466211257250990'}); //localstorage instead of sessionstore: // tokenStore: window.localStorage
+			function facebookAuth(status) {
+				console.log(status);
+				
+				openFB.api({path: '/me', 
+					success: function(response){
+						console.log(response);
+					}, 
+					error: function(err){
+						console.log(err);
+					}
+				});
 			}
-
+			
 			function login() {
 				openFB.login( function(response) {
 						if(response.status === 'connected') {
-							alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+							console.log('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
 						} else {
 							alert('Facebook login failed: ' + response.error);
 						}
-					}, {scope: 'email'});
+					}, {scope: 'public_profile,email'});
 			}
 			
 			function initMap() {

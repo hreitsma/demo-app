@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: source-sans-pro, serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -21,6 +21,18 @@ body {
 
 .wrapper .navigation {
 	max-width: 1366px;
+}
+
+.wrapper .facebook-btn {
+	position: absolute;
+	background-color: #4267b2;
+	cursor: pointer;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 24px;
+	color: #fff;
+	top: 0;
+	left: 0;
 }
 
 .navigation {

@@ -15,7 +15,8 @@
 		* Create your own at http://cspisawesome.com
 		-->
 		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<title>Lovetag42</title>
 	</head>
@@ -44,7 +45,7 @@
 		  the FB.login() function when clicked.
 		-->
 
-		<button class="btn btn-block" onclick="login()">Login with Facebook</button>
+		<a class="facebook-btn" onclick="login()">Login with Facebook</a>
 
 		<div id="status"></div>
 		
@@ -60,6 +61,8 @@
 			
 			openFB.init({appId: '466211257250990'}); //localstorage instead of sessionstore: // tokenStore: window.localStorage
 			
+			openFB.getLoginStatus(facebookAuth);
+			
 			console.log(device.platform);
 
 			// Create a Google Maps native view under the map_canvas div.
@@ -68,10 +71,23 @@
 			
 		});
 		
+		function facebookAuth(status) {
+			console.log(status);
+			
+			openFB.api({path: '/me', 
+				success: function(response){
+					console.log(response);
+				}, 
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+		
 		function login() {
 			openFB.login( function(response) {
 					if(response.status === 'connected') {
-						alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+						console.log('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
 					} else {
 						alert('Facebook login failed: ' + response.error);
 					}
