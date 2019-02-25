@@ -22,14 +22,7 @@
 
 		<div class="wrapper">
 		
-			<div class="panel panel-splash"></div>
-		
-			<div class="panel authenticate-panel" style="display: none;">
-				<a class="auth-btn facebook-btn" onclick="facebookLogin()">Log in with Facebook</a>
-				<a class="auth-btn google-btn" onclick="googleLogin()">Log in with Google</a>
-			</div>
-		
-			<div class="panel maps-panel">
+			<div class="no-hiding-panel maps-panel">
 			
 				<div class="header">
 					<div class="user-details">Hi, <span class="username"></span><img class="profile-picture" src="" /></div>
@@ -49,6 +42,13 @@
 			<div class="panel search-panel" style="display: none;">
 				
 			</div>
+		
+			<div class="panel authenticate-panel" style="display: none;">
+				<a class="auth-btn facebook-btn" onclick="facebookLogin()">Log in with Facebook</a>
+				<a class="auth-btn google-btn" onclick="googleLogin()">Log in with Google</a>
+			</div>
+			
+			<div class="panel panel-splash"></div>
 			
 			<div class="footer footer-navigation" style="display: none;">
 				<div class="nav-item search"></div>
