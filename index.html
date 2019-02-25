@@ -58,12 +58,25 @@
 		<script type="text/javascript">
 		document.addEventListener("deviceready", function() {
 			
+			openFB.init({appId: '466211257250990'}); //localstorage instead of sessionstore: // tokenStore: window.localStorage
+			
 			console.log(device.platform);
 
 			// Create a Google Maps native view under the map_canvas div.
 			var div = document.getElementById("map");
 			var map = plugin.google.maps.Map.getMap(div);
+			
 		});
+		
+		function login() {
+			openFB.login( function(response) {
+					if(response.status === 'connected') {
+						alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+					} else {
+						alert('Facebook login failed: ' + response.error);
+					}
+				}, {scope: 'email'});
+		}
 		</script>
 
 	</body>
