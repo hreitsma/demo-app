@@ -1,10 +1,10 @@
-var facebookAuthenticated = 'checking';
-var googleAuthenticated = false; // change to 'checking' when google auth is implemented
-
 function init() {
+	
 	openFB.init({appId: '466211257250990'}); //localstorage instead of sessionstore: // tokenStore: window.localStorage
 
-	openFB.getLoginStatus(facebookData);
+	if(window.sessionStorage.fbAccessToken) {
+		openFB.getLoginStatus(facebookData);
+	}
 }
 
 function facebookData(response) {
@@ -13,24 +13,18 @@ function facebookData(response) {
 	if(response.status === 'connected') {
 		openFB.api({path: '/me', 
 			success: function(response){
-				facebookAuthenticated = true;
+				showPanel('.maps-panel','.footer-navigation');
 				$('.username').text(response.name);
 				$('.profile-picture').attr("src", "https://graph.facebook.com/" + response.id + "/picture?type=normal")
 				console.log(response);
 			}, 
 			error: function(err){
-				facebookAuthenticated = false;
+				showPanel('.authenticate-panel',false);
 				openFB.logout();
 			}
 		});
 	} else {
-		facebookAuthenticated = false;
-	}
-	
-	if(!facebookAuthenticated && !googleAuthenticated) {
 		showPanel('.authenticate-panel',false);
-	} else {
-		showPanel('.maps-panel','.footer-navigation');
 	}
 }
 
