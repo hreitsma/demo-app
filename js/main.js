@@ -52,7 +52,7 @@ function facebookLogin() {
 function captureImage() {
 	navigator.mediaDevices.getUserMedia({
 		'audio': false,
-		'video': true
+		'video': { facingMode: "environment" }
 	 }).then(function(mediaStream) {
 		
 		var video = document.querySelector('video');
@@ -61,10 +61,11 @@ function captureImage() {
 			video.play();
 		};
 		
-		var track = mediaStream.getVideoTracks()[0];
-		var imageCapture = new ImageCapture(track);
-		
-		$('.capture-button').on('click',function(imageCapture){
+		$('.capture-button').on('click',function(mediastream){
+			
+			var track = mediaStream.getVideoTracks()[0];
+			var imageCapture = new ImageCapture(track);
+			
 			imageCapture.takePhoto().then(blob => {
 				console.log('Photo taken');
 				// img is an <img> tag
