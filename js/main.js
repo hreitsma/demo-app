@@ -14,6 +14,10 @@ function init() {
 		$('.nav-item.photo').addClass('active');
 		askPermissions();
 	});
+	
+	$('.capture-button').on('click',function(){
+		captureImage();
+	});
 }
 
 function facebookData(response) {
