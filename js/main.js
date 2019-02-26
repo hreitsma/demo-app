@@ -57,19 +57,21 @@ function captureImage() {
 		'audio': false,
 		'video': {facingMode: 'user'}
 	 }).then(function(getmedia) {
+		
 		var track = getmedia.getVideoTracks()[0];
 		var imageCapture = new ImageCapture(track);
+		
+		imageCapture.takePhoto().then(blob => {
+			console.log('Photo taken');
+			// img is an <img> tag
+			const image = document.querySelector('#capture-image'); 
+			image.src = URL.createObjectURL(blob);
+			$('.capture-button').hide();
+			$('#capture-image').show();
+		})
+	  .catch(err => console.error('takePhoto() failed: '));
+	  
 	 });
-	 
-	imageCapture.takePhoto().then(blob => {
-		console.log('Photo taken');
-		// img is an <img> tag
-		const image = document.querySelector('#capture-image'); 
-		image.src = URL.createObjectURL(blob);
-		$('.capture-button').hide();
-		$('#capture-image').show();
-	})
-  .catch(err => console.error('takePhoto() failed: '));
 }
 
 function showPanel(panel,footer) {
