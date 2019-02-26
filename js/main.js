@@ -8,7 +8,13 @@ function init() {
 		showPanel('.authenticate-panel',false);
 	}
 	
-	captureImage();
+	askPermissions();
+	
+	$('.upload').on('click',function(){
+		showPanel('.capture-panel','.footer-photo');
+		$('.nav-item').removeClass('active');
+		$('.nav-item.photo').addClass('active');
+	});
 }
 
 function facebookData(response) {
@@ -44,14 +50,24 @@ function facebookLogin() {
 		}, {scope: 'public_profile,email'});
 }
 
-function captureImage() {
+function askPermissions() {
 	navigator.mediaDevices.getUserMedia({
-		'audio': true,
+		'audio': false,
 		'video': {facingMode: 'user'}
 	 }).then(function(getmedia) {
 		var track = getmedia.getVideoTracks()[0];
 		var imageCapture = new ImageCapture(track);
 	 });
+}
+
+function captureImage() {
+	imageCapture.takePhoto().then(blob => {
+		console.log('Photo taken');
+		// img is an <img> tag
+		const image = document.querySelector('img'); 
+		image.src = URL.createObjectURL(blob);
+	})
+  .catch(err => console.error('takePhoto() failed: '));
 }
 
 function showPanel(panel,footer) {

@@ -81,24 +81,33 @@ body {
 	position: fixed;
 	background-color: #fff;
 	width: 100%;
-	max-width: 1366px;
-	padding: 0 8%;
 	bottom: 0;
 }
 
 .footer .nav-item {
 	float: left;
 	text-align: center;
-	width: 28%;
 	height: 50px;
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: center;
+	cursor: pointer;
+	line-height: 50px;
 }
+
+.footer.footer-navigation { padding: 0 8%; max-width: calc(1366px - 16%); }
+.footer.footer-photo { padding: 0; max-width: 1366px; }
+.footer.footer-navigation .nav-item { width: 33%; }
+.footer.footer-photo .nav-item { width: 50%; }
 
 .footer .nav-item.search { background-image: url('../img/search.png'); }
 .footer .nav-item.upload { background-image: url('../img/upload.png'); }
 .footer .nav-item.account { background-image: url('../img/user.png'); }
+
+.footer .nav-item.library.active, 
+.footer .nav-item.photo.active { 
+	border-bottom: 4px solid #000;
+}
 
 .header {
 	position: relative;
