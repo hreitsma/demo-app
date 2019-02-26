@@ -52,7 +52,7 @@ function facebookLogin() {
 function captureImage() {
 	navigator.mediaDevices.getUserMedia({
 		'audio': false,
-		'video': { facingMode: "environment" }
+		'video': { width: 1280, height: 720, facingMode: { exact: "environment" } }
 	 }).then(function(mediaStream) {
 		
 		var video = document.querySelector('video');
