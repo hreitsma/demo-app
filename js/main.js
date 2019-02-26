@@ -46,6 +46,10 @@ function showPanel(panel,footer) {
 	
 	console.log('show panel: '+ panel +', and footer: '+ footer);
 	
+	if($('.panel-splash').is(':visible')) {
+		$('.panel-splash-background').delay(700).fadeOut();
+	}
+	
 	$('.panel').hide();
 	$(panel).show();
 	

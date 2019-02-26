@@ -23,7 +23,7 @@ body {
 	max-width: 1366px;
 }
 
-.panel, .no-hiding-panel {
+.panel, .no-hiding-panel, .panel-splash-background {
 	position: absolute;
 	top: 0;	right: 0; bottom: 0; left: 0;
 	background-color: #eee;
@@ -37,6 +37,11 @@ body {
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-fill-mode:forwards;
+}
+
+.panel-splash-background {
+	animation: none;
+	background-image: none;
 }
 
 @keyframes fadeIn {
