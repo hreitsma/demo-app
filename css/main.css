@@ -88,6 +88,8 @@ body {
 }
 
 .capture-container .capture-button {
+	position: absolute;
+	top: 0; left: 0; right: 0;
 	cursor: pointer;
 	width: 120px;
 	color: #fff;
@@ -102,6 +104,7 @@ body {
 	height: 40px;
 }
 
+.capture-container #capture-stream,
 .capture-container #capture-image {
 	width: 100%;
 	max-height: calc(100vh - 100px);

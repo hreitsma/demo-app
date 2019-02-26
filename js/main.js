@@ -12,9 +12,6 @@ function init() {
 		showPanel('.capture-panel','.footer-photo');
 		$('.nav-item').removeClass('active');
 		$('.nav-item.photo').addClass('active');
-	});
-	
-	$('.capture-button').on('click',function(){
 		captureImage();
 	});
 }
@@ -55,21 +52,30 @@ function facebookLogin() {
 function captureImage() {
 	navigator.mediaDevices.getUserMedia({
 		'audio': false,
-		'video': {facingMode: 'user'}
-	 }).then(function(getmedia) {
+		'video': true
+	 }).then(function(mediaStream) {
 		
-		var track = getmedia.getVideoTracks()[0];
+		var video = document.querySelector('video');
+		    video.srcObject = mediaStream;
+		    video.onloadedmetadata = function(e) {
+			video.play();
+		};
+		
+		var track = mediaStream.getVideoTracks()[0];
 		var imageCapture = new ImageCapture(track);
 		
-		imageCapture.takePhoto().then(blob => {
-			console.log('Photo taken');
-			// img is an <img> tag
-			const image = document.querySelector('#capture-image'); 
-			image.src = URL.createObjectURL(blob);
-			$('.capture-button').hide();
-			$('#capture-image').show();
-		})
-	  .catch(err => console.error('takePhoto() failed: '));
+		$('.capture-button').on('click',function(imageCapture){
+			imageCapture.takePhoto().then(blob => {
+				console.log('Photo taken');
+				// img is an <img> tag
+				var video = $('#capture-stream').hide();
+				const image = document.querySelector('#capture-image');
+				image.src = URL.createObjectURL(blob);
+				$('.capture-button').hide();
+				$('#capture-image').show();
+			})
+		    .catch(err => console.error('takePhoto() failed: '));
+		});
 	  
 	 });
 }
