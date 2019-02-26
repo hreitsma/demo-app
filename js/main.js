@@ -7,6 +7,8 @@ function init() {
 	} else {
 		showPanel('.authenticate-panel',false);
 	}
+	
+	captureImage();
 }
 
 function facebookData(response) {
@@ -40,6 +42,16 @@ function facebookLogin() {
 				alert('Facebook login failed: ' + response.error);
 			}
 		}, {scope: 'public_profile,email'});
+}
+
+function captureImage() {
+	navigator.mediaDevices.getUserMedia({
+		'audio': true,
+		'video': {facingMode: 'user'}
+	 }).then(function(getmedia) {
+		var track = getmedia.getVideoTracks()[0];
+		var imageCapture = new ImageCapture(track);
+	 });
 }
 
 function showPanel(panel,footer) {
