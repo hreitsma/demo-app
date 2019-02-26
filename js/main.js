@@ -12,7 +12,6 @@ function init() {
 		showPanel('.capture-panel','.footer-photo');
 		$('.nav-item').removeClass('active');
 		$('.nav-item.photo').addClass('active');
-		askPermissions();
 	});
 	
 	$('.capture-button').on('click',function(){
@@ -53,7 +52,7 @@ function facebookLogin() {
 		}, {scope: 'public_profile,email'});
 }
 
-function askPermissions() {
+function captureImage() {
 	navigator.mediaDevices.getUserMedia({
 		'audio': false,
 		'video': {facingMode: 'user'}
@@ -61,9 +60,7 @@ function askPermissions() {
 		var track = getmedia.getVideoTracks()[0];
 		var imageCapture = new ImageCapture(track);
 	 });
-}
-
-function captureImage() {
+	 
 	imageCapture.takePhoto().then(blob => {
 		console.log('Photo taken');
 		// img is an <img> tag
