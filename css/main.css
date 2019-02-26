@@ -25,7 +25,7 @@ body {
 
 .panel, .no-hiding-panel, .panel-splash-background {
 	position: absolute;
-	top: 0;	right: 0; bottom: 0; left: 0;
+	top: 50px;	right: 0; bottom: 0; left: 0;
 	background-color: #eee;
 	background-image: url('../img/splash-image.png');
 	background-repeat: no-repeat;
@@ -37,6 +37,10 @@ body {
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-fill-mode:forwards;
+}
+
+.panel.authenticate-panel {
+	top: 0;
 }
 
 .panel-splash-background {
@@ -75,6 +79,34 @@ body {
 .google-btn {
 	background-color: #db4437;
 	bottom: 16px;
+}
+
+.capture-container {
+	width: 100%;
+	background: #000;
+	height: calc(100vh - 100px);
+}
+
+.capture-container .capture-button {
+	cursor: pointer;
+	width: 120px;
+	color: #fff;
+	text-align: center;
+    margin: 0 auto;
+	padding-top: 80px;
+	line-height: 35px;
+}
+
+.capture-container .capture-button img {
+	width: 40px;
+	height: 40px;
+}
+
+.capture-container #capture-image {
+	width: 100%;
+	max-height: calc(100vh - 100px);
+	max-width: 100%;
+	object-fit: contain;
 }
 
 .footer {
@@ -151,121 +183,6 @@ body {
 	height: calc(100vh - 100px);
 }
 
-.search-bar {
-    background: #ccc;
-    height: 32px;
-    padding-left:6px;
-    padding-right: 6px;
-    padding-top: 6px;
-    margin-bottom: 6px;
-    border-bottom: solid 1px #666;
-}
-
-input[type="search"] {
-    width:100%;
-	border: none;
-	border-radius: 4px;
-	padding: 4px 0px 2px 2px;
-	margin-top: 0px;
-	font-size: 16px;
-	box-shadow: inset 0 2px 2px rgba(0,0,0,.5), 0 1px #fff;
-	background: #eee;
-    -webkit-appearance:none;
-}
-
-input[type="search"]:focus {
-	outline: none;
-	box-shadow: inset 0 4px 8px rgba(0,0,0,.5), 0 1px #fff;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: #fafafa;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-li {
-    display: block;
-    border-top: 1px solid #c0c0c0;
-    padding: 10px;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-li {
-    display: block;
-    border-top: 1px solid #e0e0e0;
-    padding: 10px;
-}
-
-li {
-    padding: 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    width: 100%;
-}
-
-li>a {
-    color: #000;
-    display: block;
-    padding: 5px;
-    text-decoration: none;
-    width: 100%;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-position: -10px 0;
-    background-repeat: no-repeat;
-    -webkit-background-size: 10px 100%;
-    -moz-background-size: 10px 100%;
-    -ms-background-size: 10px 100%;
-    -o-background-size: 10px 100%;
-    background-size: 10px 100%;
-}
-
-li>a * {
-    pointer-events: none;
-}
-
-.button {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-	background-color:#ededed;
-	-moz-border-radius:2px;
-	-webkit-border-radius:2px;
-	border-radius:2px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#666666;
-	font-size:14px;
-	text-decoration:none;
-	text-shadow:1px 1px 0px #ffffff;
-}
-
-.button:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-	background-color:#dfdfdf;
-
-}
-
 h1 {
     font-size: 18px;
     padding: 20 0 0 0;
@@ -277,11 +194,4 @@ h2 {
     font-weight: normal;
     padding: 0px;
     margin: 0px;
-}
-
-.employee-image {
-    float:left;
-    margin:10px;
-    width:100px;
-    height:100px;
 }

@@ -22,12 +22,12 @@
 
 		<div class="wrapper">
 		
-			<div class="no-hiding-panel maps-panel">
+			<div class="header">
+				<div class="user-details">Hi, <span class="username"></span><img class="profile-picture" src="" /></div>
+				<div class="back-button"></div>
+			</div>
 			
-				<div class="header">
-					<div class="user-details">Hi, <span class="username"></span><img class="profile-picture" src="" /></div>
-					<div class="back-button"></div>
-				</div>
+			<div class="no-hiding-panel maps-panel">
 				
 				<div id="map"></div>
 				
@@ -40,7 +40,13 @@
 			</div>
 			
 			<div class="panel capture-panel" style="display: none;">
-				<img src="img/capture-placeholder.png" />
+				<div class="capture-container">
+					<img id="capture-image" src="img/take-photo.png" style="display: none;" />
+					<div class="capture-button">
+						<img src="img/take-photo.png" /><br>
+						Take a photo
+					</div>
+				</div>
 			</div>
 			
 			<div class="panel search-panel" style="display: none;">

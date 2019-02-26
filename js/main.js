@@ -8,12 +8,11 @@ function init() {
 		showPanel('.authenticate-panel',false);
 	}
 	
-	askPermissions();
-	
 	$('.upload').on('click',function(){
 		showPanel('.capture-panel','.footer-photo');
 		$('.nav-item').removeClass('active');
 		$('.nav-item.photo').addClass('active');
+		askPermissions();
 	});
 }
 
@@ -64,8 +63,10 @@ function captureImage() {
 	imageCapture.takePhoto().then(blob => {
 		console.log('Photo taken');
 		// img is an <img> tag
-		const image = document.querySelector('img'); 
+		const image = document.querySelector('#capture-image'); 
 		image.src = URL.createObjectURL(blob);
+		$('.capture-button').hide();
+		$('#capture-image').show();
 	})
   .catch(err => console.error('takePhoto() failed: '));
 }
