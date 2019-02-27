@@ -51,7 +51,6 @@ var App = (function () {
 		if(navHistory.length > 1) {
 			var panel = navHistory.splice(-2)[0];
 		} else if(platform == 'android' || platform == 'iphone') {
-			alert('go back!');
 			navigator.app.exitApp();
 		} else if(window.localStorage.fbAccessToken) {
 			openFB.logout();
@@ -60,6 +59,8 @@ var App = (function () {
 		}
 		
 		showPanel(panel || 'authenticate');
+		
+		alert('go back!');
 		
 		return false;
 	}
