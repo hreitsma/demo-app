@@ -21,7 +21,7 @@ var App = (function () {
 	
 	var backBtn = document.getElementById('back-button');
 	backBtn.addEventListener("click", goBack);
-	document.addEventListener("backbutton", goBack, true);
+	document.addEventListener("backbutton", goBack, false);
 	
 	var facebookBtn = document.getElementById('facebook-btn');
 	facebookBtn.addEventListener("click", facebookLogin);
