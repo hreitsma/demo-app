@@ -81,13 +81,12 @@
 		<script type="text/javascript">
 		document.addEventListener("deviceready", function() {
 			
-			App.init(device.platform);
+			App.init({platform:device.platform});
 			
 			console.log(device.platform);
 
-			// Create a Google Maps native view under the map_canvas div.
+			// Create a Google Maps native view
 			var div = document.getElementById("map");
-			console.log(div.offsetWidth);
 			var map = plugin.google.maps.Map.getMap(div);
 			
 		});
