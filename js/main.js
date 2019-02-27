@@ -116,7 +116,6 @@ var App = (function () {
 			
 			var video = document.querySelector('video');
 				video.srcObject = mediaStream;
-				video.correctOrientation = true;
 				video.onloadedmetadata = function(e) {
 				video.play();
 			};
@@ -130,6 +129,16 @@ var App = (function () {
 					console.log('Photo taken');
 					// img is an <img> tag
 					var video = $('#capture-stream').hide();
+					
+					
+					loadImage.parseMetaData(blob, function(data) {  
+                        if (data.exif) {  
+                            ori = data.exif.get('Orientation');  
+							console.log(ori);  
+                        }  
+                        console.log(ori);  
+                    });
+					
 					const image = document.querySelector('#capture-image');
 					image.src = URL.createObjectURL(blob);
 					$('.capture-button').hide();
