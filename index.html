@@ -83,11 +83,6 @@
 			
 			App.init(device.platform);
 			
-			ons.ready(function() {
-				ons.disableDeviceBackButtonHandler();
-				document.addEventListener("backbutton", App.goBack, false);
-			});
-			
 			console.log(device.platform);
 
 			// Create a Google Maps native view under the map_canvas div.

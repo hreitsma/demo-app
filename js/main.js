@@ -23,6 +23,7 @@ var App = (function () {
 	var facebookBtn = document.getElementById('facebook-btn');
 	var googleBtn = document.getElementById('google-btn');
 	
+	document.addEventListener("backbutton", goBack, false);
 	backBtn.addEventListener("click", goBack);
 	facebookBtn.addEventListener("click", facebookLogin);
 	googleBtn.addEventListener("click", googleLogin);
