@@ -48,10 +48,7 @@ var App = (function () {
 		}
 	}
 	
-	function goBack(e) {
-		
-		e.stopPropagation();
-		e.preventDefault();
+	function goBack() {
 		
 		console.log('go back');
 		console.log(navHistory);
@@ -114,7 +111,8 @@ var App = (function () {
 	function captureImage() {
 		navigator.mediaDevices.getUserMedia({
 			'audio': false,
-			'video': { facingMode: { exact: "environment" } }
+			'correctOrientation': true,
+			'video': { facingMode: "environment" }
 		 }).then(function(mediaStream) {
 			
 			var video = document.querySelector('video');
@@ -128,7 +126,7 @@ var App = (function () {
 				var track = mediaStream.getVideoTracks()[0];
 				var imageCapture = new ImageCapture(track);
 				
-				imageCapture.takePhoto({correctOrientation: true}).then(blob => {
+				imageCapture.takePhoto().then(blob => {
 					console.log('Photo taken');
 					// img is an <img> tag
 					var video = $('#capture-stream').hide();
