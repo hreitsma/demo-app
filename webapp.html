@@ -24,7 +24,7 @@
 		
 			<div class="header">
 				<div class="user-details">Hi, <span class="username"></span><img class="profile-picture" src="" /></div>
-				<div class="back-button"></div>
+				<div class="back-button" id="back-button"></div>
 			</div>
 			
 			<div class="no-hiding-panel maps-panel">
@@ -55,12 +55,12 @@
 			</div>
 		
 			<div class="panel authenticate-panel" style="display: none;">
-				<a class="auth-btn facebook-btn" onclick="facebookLogin()">Log in with Facebook</a>
-				<a class="auth-btn google-btn" onclick="googleLogin()">Log in with Google</a>
+				<a class="auth-btn" id="facebook-btn">Log in with Facebook</a>
+				<a class="auth-btn" id="google-btn">Log in with Google</a>
 			</div>
 			
-			<div class="panel-splash-background"></div>
-			<div class="panel panel-splash"></div>
+			<!--<div class="panel-splash-background"></div>
+			<div class="panel panel-splash"></div>-->
 			
 			<div class="footer footer-navigation" style="display: none;">
 				<div class="nav-item search"></div>
@@ -83,7 +83,7 @@
 			
 			$(document).ready(function() {
 				
-				init();
+				App.init({});
 				
 			});
 			

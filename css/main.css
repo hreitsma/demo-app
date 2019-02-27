@@ -32,11 +32,11 @@ body {
 	background-position: center center;
 	background-size: cover;
 	height: 100vh;
-	animation-name: fadeIn;
+	/*animation-name: fadeIn;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
-    animation-fill-mode:forwards;
+    animation-fill-mode:forwards;*/
 }
 
 .panel.authenticate-panel {
@@ -71,12 +71,12 @@ body {
 	right: 0;
 }
 
-.facebook-btn {
+#facebook-btn {
 	background-color: #4267b2;
 	bottom: 72px;
 }
 
-.google-btn {
+#google-btn {
 	background-color: #db4437;
 	bottom: 16px;
 }
@@ -117,6 +117,7 @@ body {
 	background-color: #fff;
 	width: 100%;
 	bottom: 0;
+	max-width: 1366px;
 }
 
 .footer .nav-item {
@@ -130,8 +131,8 @@ body {
 	line-height: 50px;
 }
 
-.footer.footer-navigation { padding: 0 8%; max-width: calc(1366px - 16%); }
-.footer.footer-photo { padding: 0; max-width: 1366px; }
+/*.footer.footer-navigation { padding: 0 8%; max-width: calc(1366px - 16%); }
+.footer.footer-photo { padding: 0; max-width: 1366px; }*/
 .footer.footer-navigation .nav-item { width: 33%; }
 .footer.footer-photo .nav-item { width: 50%; }
 
