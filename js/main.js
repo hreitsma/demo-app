@@ -111,8 +111,7 @@ var App = (function () {
 	function captureImage() {
 		navigator.mediaDevices.getUserMedia({
 			'audio': false,
-			'correctOrientation': true,
-			'video': { facingMode: "environment" }
+			'video': { facingMode: "environment", correctOrientation: true, }
 		 }).then(function(mediaStream) {
 			
 			var video = document.querySelector('video');
