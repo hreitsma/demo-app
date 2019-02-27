@@ -9,7 +9,8 @@ var App = (function () {
 		panelBehavior = {
 			authenticate: { header: false, footer: false, history: false },
 			maps: { header: true, footer: 'footer-navigation', history: true },
-			capture: { header: false, footer: 'footer-photo', history: true },
+			capture: { header: true, footer: 'footer-photo', history: true },
+			library: { header: true, footer: 'footer-photo', history: true },
 		};
 
 	$('.upload').on('click',function(){
@@ -33,8 +34,10 @@ var App = (function () {
             platform = params.platform;
         }
 		
+		// add eventlistener for backbutton after deviceready
 		document.addEventListener("backbutton", goBack, false);
 		
+		// initialize facebook authentication
 		openFB.init({appId: '466211257250990', tokenStore: window.localStorage});
 
 		// validate authentication tokens
@@ -125,7 +128,7 @@ var App = (function () {
 				var track = mediaStream.getVideoTracks()[0];
 				var imageCapture = new ImageCapture(track);
 				
-				imageCapture.takePhoto().then(blob => {
+				imageCapture.takePhoto({correctOrientation: true}).then(blob => {
 					console.log('Photo taken');
 					// img is an <img> tag
 					var video = $('#capture-stream').hide();
