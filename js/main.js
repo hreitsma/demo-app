@@ -138,6 +138,7 @@ var App = (function () {
                         var loadingImage = loadImage(  
                             blob,  
                             function(img) {
+								img.id = 'capture-image';
                                 document.querySelector('#capture-container').appendChild(img);  
                             }, {  
                                 maxWidth: 600,
