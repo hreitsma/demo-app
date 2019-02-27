@@ -45,7 +45,7 @@ var App = (function () {
 		}
 	}
 	
-	function goBack() {
+	function goBack(e) {
 		
 		e.preventDefault();
 		
