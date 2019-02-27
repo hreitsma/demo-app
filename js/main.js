@@ -49,19 +49,23 @@ var App = (function () {
 		e.stopPropagation();
 		e.preventDefault();
 		
+		console.log('go back');
+		console.log(navHistory);
+		
 		if(navHistory.length > 1) {
+			console.log('history > 1');
 			var panel = navHistory.splice(-2)[0];
 		} else if(platform == 'android' || platform == 'iphone') {
+			console.log('exit app');
 			navigator.app.exitApp();
 		} else if(window.localStorage.fbAccessToken) {
+			console.log('fb logout');
 			openFB.logout();
 		} else if(false /* check for google login */) {
 			// google logout
 		}
 		
 		showPanel(panel || 'authenticate');
-		
-		alert('go back!');
 		
 		return false;
 	}
