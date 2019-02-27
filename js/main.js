@@ -60,6 +60,8 @@ var App = (function () {
 		}
 		
 		showPanel(panel || 'authenticate');
+		
+		return false;
 	}
 
 	function facebookData(response) {
