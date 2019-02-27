@@ -22,12 +22,12 @@
 	</head>
 	<body>
 	
-		<div class="no-hiding-panel maps-panel">
+		<div class="header">
+			<div class="user-details">Hi, <span class="username"></span><img class="profile-picture" src="" /></div>
+			<div class="back-button" id="back-button"></div>
+		</div>
 		
-			<div class="header">
-				<div class="user-details">Hi, <span class="username"></span><img class="profile-picture" src="" /></div>
-				<div class="back-button" id="back-button"></div>
-			</div>
+		<div class="no-hiding-panel maps-panel">
 			
 			<div id="map"></div>
 			
@@ -53,25 +53,26 @@
 		<div class="panel search-panel" style="display: none;">
 			
 		</div>
-		
+	
 		<div class="panel authenticate-panel" style="display: none;">
 			<a class="auth-btn" id="facebook-btn">Log in with Facebook</a>
 			<a class="auth-btn" id="google-btn">Log in with Google</a>
 		</div>
 		
-		<div class="panel panel-splash"></div>
+		<!--<div class="panel-splash-background"></div>
+		<div class="panel panel-splash"></div>-->
 		
 		<div class="footer footer-navigation" style="display: none;">
-				<div class="nav-item search"></div>
-				<div class="nav-item upload"></div>
-				<div class="nav-item account"></div>
-			</div>
-			
-			<div class="footer footer-photo" style="display: none;">
-				<div class="nav-item library">Library</div>
-				<div class="nav-item photo">Photo</div>
-			</div>
+			<div class="nav-item search"></div>
+			<div class="nav-item upload"></div>
+			<div class="nav-item account"></div>
+		</div>
 		
+		<div class="footer footer-photo" style="display: none;">
+			<div class="nav-item library">Library</div>
+			<div class="nav-item photo">Photo</div>
+		</div>
+				
 		<script src="cordova.js"></script>
 		<script src="lib/jquery-1.8.2.min.js"></script>
 		<script src="lib/openfb.js"></script>
