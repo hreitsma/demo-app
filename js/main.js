@@ -20,15 +20,13 @@ var App = (function () {
 	});
 	
 	var backBtn = document.getElementById('back-button');
-	backBtn.addEventListener("click", goBack);
-	document.addEventListener("backbutton", goBack, false);
-	
 	var facebookBtn = document.getElementById('facebook-btn');
-	facebookBtn.addEventListener("click", facebookLogin);
-	
 	var googleBtn = document.getElementById('google-btn');
+	
+	backBtn.addEventListener("click", goBack);
+	facebookBtn.addEventListener("click", facebookLogin);
 	googleBtn.addEventListener("click", googleLogin);
-		
+	
 	function init(params) {
 		
 		if (params.platform) {
@@ -155,6 +153,7 @@ var App = (function () {
 	// The public API
     return {
         init: init,
+        goBack: goBack,
     }
 	
 }());
