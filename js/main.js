@@ -134,13 +134,21 @@ var App = (function () {
 					loadImage.parseMetaData(blob, function(data) {  
                         if (data.exif) {  
                             ori = data.exif.get('Orientation');  
-							console.log(ori);  
                         }  
-                        console.log(ori);  
+                        var loadingImage = loadImage(  
+                            blob,  
+                            function(img) {
+                                document.querySelector('#capture-container').appendChild(img);  
+                            }, {  
+                                maxWidth: 600,
+                                //canvas: true,
+                                orientation: ori || true
+                            }  
+                        );  
                     });
 					
-					const image = document.querySelector('#capture-image');
-					image.src = URL.createObjectURL(blob);
+					//const image = document.querySelector('#capture-image');
+					//image.src = URL.createObjectURL(blob);
 					$('.capture-button').hide();
 					$('#capture-image').show();
 				})
