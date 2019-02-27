@@ -47,6 +47,8 @@ var App = (function () {
 	
 	function goBack() {
 		
+		e.preventDefault();
+		
 		if(navHistory.length > 1) {
 			var panel = navHistory.splice(-2)[0];
 		} else if(platform == 'android' || platform == 'iphone') {
