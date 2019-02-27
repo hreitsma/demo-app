@@ -22,10 +22,7 @@ var App = (function () {
 	var backBtn = document.getElementById('back-button');
 	var facebookBtn = document.getElementById('facebook-btn');
 	var googleBtn = document.getElementById('google-btn');
-	
-	document.addEventListener("backbutton", function (e) {
-        e.preventDefault();
-    }, false);
+
 	backBtn.addEventListener("click", goBack);
 	facebookBtn.addEventListener("click", facebookLogin);
 	googleBtn.addEventListener("click", googleLogin);
@@ -35,6 +32,8 @@ var App = (function () {
 		if (params.platform) {
             platform = params.platform;
         }
+		
+		document.addEventListener("backbutton", goBack, false);
 		
 		openFB.init({appId: '466211257250990', tokenStore: window.localStorage});
 
