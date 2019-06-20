@@ -10,6 +10,8 @@
     <description>
         Find the best places to meet
     </description>
+	
+	<icon src="icon.png" />
  
     <author href="https://custompixels.nl" email="henk@custompixels.nl">
         CustomPixels
